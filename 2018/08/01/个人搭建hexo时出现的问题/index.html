@@ -108,24 +108,25 @@
 
 
 
-  <meta name="description" content="个人掉坑史">
+  <meta name="description" content="主要问题：1.Please make sure you have the correct access rightsand the repository exists.2.the remote end hung up unexpectedly">
 <meta name="keywords" content="XD">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XD blog">
-<meta property="og:url" content="fjh354.github.io/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人搭建hexo时出现的问题">
+<meta property="og:url" content="fjh354.github.io/2018/08/01/个人搭建hexo时出现的问题/index.html">
 <meta property="og:site_name" content="XD blog">
-<meta property="og:description" content="个人掉坑史">
+<meta property="og:description" content="主要问题：1.Please make sure you have the correct access rightsand the repository exists.2.the remote end hung up unexpectedly">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-08-01T07:19:36.335Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="XD blog">
-<meta name="twitter:description" content="个人掉坑史">
+<meta name="twitter:title" content="个人搭建hexo时出现的问题">
+<meta name="twitter:description" content="主要问题：1.Please make sure you have the correct access rightsand the repository exists.2.the remote end hung up unexpectedly">
 
 
 
 
 
 
-  <link rel="canonical" href="fjh354.github.io/"/>
+  <link rel="canonical" href="fjh354.github.io/2018/08/01/个人搭建hexo时出现的问题/"/>
 
 
 
@@ -135,7 +136,7 @@
   };
 </script>
 
-  <title>XD blog</title>
+  <title>个人搭建hexo时出现的问题 | XD blog</title>
   
 
 
@@ -182,8 +183,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -224,7 +224,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
     <a href="/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
   </li>
@@ -268,9 +268,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -302,11 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/个人搭建hexo时出现的问题/" itemprop="url">
-                  个人搭建hexo时出现的问题
-                </a>
+          <h1 class="post-title" itemprop="name headline">个人搭建hexo时出现的问题
               
             
           </h1>
@@ -369,16 +365,13 @@
       
 
       
-        
-          <p>主要问题：<br>1.Please make sure you have the correct access rights<br>and the repository exists.<br>2.the remote end hung up unexpectedly<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/01/个人搭建hexo时出现的问题/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <p>主要问题：<br>1.Please make sure you have the correct access rights<br>and the repository exists.<br>2.the remote end hung up unexpectedly<br><a id="more"></a><br>首先根据官方文档hexo.io/zh-cn/docs/搭建完基本环境，问题出在部署的时候。</p>
+<p>部署对象：github</p>
+<p>问题1：please……….<br>解决：_config文件将HTTP的方式转换成ssh,增加了ssh key（方法网上一大堆）,切换到hexo文件夹下，ssh -T <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a> ，不知道为什么基本每次部署都让我ssh一下，难道是因为我关闭了git bash?完了以后上传提交，如果不开VPN并且在大中华土地上的人几乎都会遇到问题2</p>
+<p>问题2：the remote…<br>解决：其实就是网络不行，修改最低速度限制和时间：<br>git config –global http.lowSpeedLimit 0<br>git config –global http.lowSpeedTime 999999 //6个9是最大值，开发者喜欢这个姿势？</p>
+<p>修改上传时HTTP的缓存:<br>git config –global http.postBuffer 524288000 //500M,想要更多可以自己乘，我乘三倍next主题的hexo才传上去</p>
+<p>基本上就没什么问题了，接下来是几个细节：<br>细节：GitHub Repository name为 用户名.github.io不然不能直接用XXX.github.io进入网站，而是需要一个全称<br>细节2：如果依靠SSH方式部署，那么在生成的ssh key填入github的框内时，需要勾选读写权限<br>细节3：hexo配置文件内 属性：后必须带空格，比如 repo:空格xxxxxxx</p>
+
       
     </div>
 
@@ -398,156 +391,28 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="fjh354.github.io/2018/08/01/iview自定义导出，excel日期格式转换/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="XD">
-      <meta itemprop="description" content="个人掉坑史">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="XD blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/01/iview自定义导出，excel日期格式转换/" itemprop="url">
-                  iview自定义导出，excel日期格式转换
-                </a>
-              
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2018/08/01/iview自定义导出，excel日期格式转换/" rel="next" title="iview自定义导出，excel日期格式转换">
+                <i class="fa fa-chevron-left"></i> iview自定义导出，excel日期格式转换
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-01 14:29:01 / 修改时间：14:45:53" itemprop="dateCreated datePublished" datetime="2018-08-01T14:29:01+08:00">2018-08-01</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>  在用iview导出表格至Excel的时候遇到日期格式问题，Excel将日期自动转换为英文，但是我要的效果是YYYY-MM如：“2018-08”,于是使用自定义导出，思路是将导出的数据由2018-08转换为=”2018-08”使Excel不再自动转换格式<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/01/iview自定义导出，excel日期格式转换/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -557,14 +422,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -774,6 +640,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
