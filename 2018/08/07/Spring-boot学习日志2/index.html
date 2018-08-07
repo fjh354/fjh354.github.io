@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="在用iview导出表格至Excel的时候遇到日期格式问题，Excel将日期自动转换为英文，但是我要的效果是YYYY-MM如：“2018-08”,于是使用自定义导出，思路是将导出的数据由2018-08转换为=”2018-08”使Excel不再自动转换格式">
+  <meta name="description" content="对spring boot整合Mybatis的学习做一个总结">
 <meta name="keywords" content="XD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="iview自定义导出，excel日期格式转换">
-<meta property="og:url" content="fjh354.github.io/2018/08/01/iview自定义导出，excel日期格式转换/index.html">
+<meta property="og:title" content="Spring boot学习日志2">
+<meta property="og:url" content="fjh354.github.io/2018/08/07/Spring-boot学习日志2/index.html">
 <meta property="og:site_name" content="XD blog">
-<meta property="og:description" content="在用iview导出表格至Excel的时候遇到日期格式问题，Excel将日期自动转换为英文，但是我要的效果是YYYY-MM如：“2018-08”,于是使用自定义导出，思路是将导出的数据由2018-08转换为=”2018-08”使Excel不再自动转换格式">
+<meta property="og:description" content="对spring boot整合Mybatis的学习做一个总结">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-01T06:45:53.345Z">
+<meta property="og:updated_time" content="2018-08-07T06:40:11.655Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="iview自定义导出，excel日期格式转换">
-<meta name="twitter:description" content="在用iview导出表格至Excel的时候遇到日期格式问题，Excel将日期自动转换为英文，但是我要的效果是YYYY-MM如：“2018-08”,于是使用自定义导出，思路是将导出的数据由2018-08转换为=”2018-08”使Excel不再自动转换格式">
+<meta name="twitter:title" content="Spring boot学习日志2">
+<meta name="twitter:description" content="对spring boot整合Mybatis的学习做一个总结">
 
 
 
 
 
 
-  <link rel="canonical" href="fjh354.github.io/2018/08/01/iview自定义导出，excel日期格式转换/"/>
+  <link rel="canonical" href="fjh354.github.io/2018/08/07/Spring-boot学习日志2/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>iview自定义导出，excel日期格式转换 | XD blog</title>
+  <title>Spring boot学习日志2 | XD blog</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="fjh354.github.io/2018/08/01/iview自定义导出，excel日期格式转换/">
+    <link itemprop="mainEntityOfPage" href="fjh354.github.io/2018/08/07/Spring-boot学习日志2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XD">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">iview自定义导出，excel日期格式转换
+          <h1 class="post-title" itemprop="name headline">Spring boot学习日志2
               
             
           </h1>
@@ -327,7 +327,7 @@
                 
               
 
-              <time title="创建时间：2018-08-01 14:29:01 / 修改时间：14:45:53" itemprop="dateCreated datePublished" datetime="2018-08-01T14:29:01+08:00">2018-08-01</time>
+              <time title="创建时间：2018-08-07 14:28:40 / 修改时间：14:40:11" itemprop="dateCreated datePublished" datetime="2018-08-07T14:28:40+08:00">2018-08-07</time>
             
 
             
@@ -365,7 +365,13 @@
       
 
       
-        <p>  在用iview导出表格至Excel的时候遇到日期格式问题，Excel将日期自动转换为英文，但是我要的效果是YYYY-MM如：“2018-08”,于是使用自定义导出，思路是将导出的数据由2018-08转换为=”2018-08”使Excel不再自动转换格式<br>  <a id="more"></a><br>  首先参考了 <a href="https://blog.csdn.net/m0_38014125/article/details/80021141" target="_blank" rel="noopener">https://blog.csdn.net/m0_38014125/article/details/80021141</a> 的文章，有一些细节与他不同<br>  1.自定义方法中如果我不实现 columns: 的话我的 data: 不会生效，我也不知道为什么，实验了好多次<br>  2.参考文章内直接修改的是data的某个值(data.enter_time),而我直接修改不行，需要将整个data传入方法中，取出日期修改格式以后再返回整个data，所以我的自定义方法内的data:如下 data:this.dataList.filter((data, index) =&gt; this.formatData(data))<br>  这样导出Excel就没有问题了，Excel内日期显示正常<br>  但是，表格数据的日期全部变为了=”yyyy-mm” 因此我在exportCsv（）方法运行结束后，加了刷新当前页面的方法，就是重新查询一次</p>
+        <p>对spring boot整合Mybatis的学习做一个总结<br><a id="more"></a><br>首先需要引入mybatis的配置：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">      &lt;groupId&gt;org.mybatis.spring.boot&lt;/groupId&gt;</span><br><span class="line">      &lt;artifactId&gt;mybatis-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">      &lt;version&gt;1.1.1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure></p>
+<p>调查了一下版本，将mybatis-spring-boot-starter的版本改为1.1.1或者1.3.0之后可能会报错，其中一点的原因是注解方式更换，<a href="https://blog.csdn.net/n447194252/article/details/77968737" target="_blank" rel="noopener">https://blog.csdn.net/n447194252/article/details/77968737</a></p>
+<p>引入Mysql驱动：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;mysql&lt;/groupId&gt;</span><br><span class="line">        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;</span><br><span class="line">	&lt;version&gt;6.0.6&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><br>其中：version可去，估摸着不写version会自动使用默认版本的jar包，这里JDK1.7用不了mysql 6.0.6的包，会报错</p>
+<p>在applications.properties配置文件中添加MySQL的配置<br>spring.datasource.driverClassName = com.mysql.jdbc.Driver<br>spring.datasource.url = jdbc:mysql://localhost:3306/testuseUnicode=true&amp;characterEncoding=utf-8<br>spring.datasource.username = root<br>spring.datasource.password = root<br>Spring boot会自动加载spring.datasource.*相关配置，数据源就会自动注入到sqlSessionFactory中，sqlSessionFactory会自动注入到Mapper中</p>
+<p>启动器加上注解@MapperScan(“Dao包路径”)</p>
+<p>mapper两种写法：<br>1.正常interface配合xml<br>2.interface内直接写sql<br>详细参考：<a href="http://www.ityouknow.com/springboot/2016/11/06/spring-boo-mybatis.html" target="_blank" rel="noopener">http://www.ityouknow.com/springboot/2016/11/06/spring-boo-mybatis.html</a></p>
+<p>这里把以前的疑惑给搞清楚了，一直不知道注入service以后程序怎么判断用的是哪个impl类的方法，原来是根据@Service(“属性名”)，如private UserDao userDao,@Service(“userDao”)</p>
 
       
     </div>
@@ -393,15 +399,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2018/08/03/spring-boot部分注释标签摘要/" rel="next" title="spring boot部分注释标签摘要">
+                <i class="fa fa-chevron-left"></i> spring boot部分注释标签摘要
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/01/个人搭建hexo时出现的问题/" rel="prev" title="个人搭建hexo时出现的问题">
-                个人搭建hexo时出现的问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
