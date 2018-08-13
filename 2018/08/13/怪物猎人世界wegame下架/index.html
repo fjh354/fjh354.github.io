@@ -108,25 +108,25 @@
 
 
 
-  <meta name="description" content="今天根据要求学习spring boot，大概的部署都结束了，来此记录一下出现的问题">
-<meta name="keywords" content="学习日志">
+  <meta name="description" content="2018.8.13在公交车上看到wegame下架mhw的事情让我一整天都不想工作，天生一个游戏迷，满脑子都是白刷了白刷了。。">
+<meta name="keywords" content="XD">
 <meta property="og:type" content="article">
-<meta property="og:title" content="spring boot日志1">
-<meta property="og:url" content="fjh354.github.io/2018/08/03/spring-boot日志1/index.html">
+<meta property="og:title" content="怪物猎人世界wegame下架">
+<meta property="og:url" content="fjh354.github.io/2018/08/13/怪物猎人世界wegame下架/index.html">
 <meta property="og:site_name" content="XD blog">
-<meta property="og:description" content="今天根据要求学习spring boot，大概的部署都结束了，来此记录一下出现的问题">
+<meta property="og:description" content="2018.8.13在公交车上看到wegame下架mhw的事情让我一整天都不想工作，天生一个游戏迷，满脑子都是白刷了白刷了。。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-03T05:42:47.492Z">
+<meta property="og:updated_time" content="2018-08-13T05:56:23.607Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="spring boot日志1">
-<meta name="twitter:description" content="今天根据要求学习spring boot，大概的部署都结束了，来此记录一下出现的问题">
+<meta name="twitter:title" content="怪物猎人世界wegame下架">
+<meta name="twitter:description" content="2018.8.13在公交车上看到wegame下架mhw的事情让我一整天都不想工作，天生一个游戏迷，满脑子都是白刷了白刷了。。">
 
 
 
 
 
 
-  <link rel="canonical" href="fjh354.github.io/2018/08/03/spring-boot日志1/"/>
+  <link rel="canonical" href="fjh354.github.io/2018/08/13/怪物猎人世界wegame下架/"/>
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>spring boot日志1 | XD blog</title>
+  <title>怪物猎人世界wegame下架 | XD blog</title>
   
 
 
@@ -285,7 +285,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="fjh354.github.io/2018/08/03/spring-boot日志1/">
+    <link itemprop="mainEntityOfPage" href="fjh354.github.io/2018/08/13/怪物猎人世界wegame下架/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="XD">
@@ -302,7 +302,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">spring boot日志1
+          <h1 class="post-title" itemprop="name headline">怪物猎人世界wegame下架
               
             
           </h1>
@@ -327,7 +327,7 @@
                 
               
 
-              <time title="创建时间：2018-08-03 13:21:01 / 修改时间：13:42:47" itemprop="dateCreated datePublished" datetime="2018-08-03T13:21:01+08:00">2018-08-03</time>
+              <time title="创建时间：2018-08-13 13:24:50 / 修改时间：13:56:23" itemprop="dateCreated datePublished" datetime="2018-08-13T13:24:50+08:00">2018-08-13</time>
             
 
             
@@ -365,21 +365,9 @@
       
 
       
-        <p>今天根据要求学习spring boot，大概的部署都结束了，来此记录一下出现的问题<br><a id="more"></a><br>spring boot是用来干什么的？<br>通常在使用spring的时候需要配置一大堆的东西，现在这一些都不用自己配了，而是交给官方来做。</p>
-<p>简单来说就是通过spring boot的生成网址自动生成带有配置文件的项目，导入eclipse以后通过eclipse的编译自动生成包结构等，也就是说spring不用再自己配置了，而是交给官方做（NM必须的，培训的时候就觉得这个配置文件我真是CNM了，抱歉爆粗口了），之后使用者可以根据自己的实际需求增删相关配置</p>
-<p>当导入maven项目后，eclipse经过编译，包结构会出现以下三种：<br>src/main/java  程序开发以及主程序入口<br>src/main/resources 配置文件<br>src/test/java  测试程序</p>
-<p>之后运行XXXapplication.java文件开启spring boot</p>
-<p>流程就是这样，非常简单，接下来就是我遇到的几个小问题：<br>1.如果没有Selected Dependencies这选择web的话，pom.xml需要手动增加web模块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">	&lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><br>pom.xml文件中默认有两个模块：<br>spring-boot-starter：核心模块，包括自动配置支持、日志和YAML；</p>
-<p>spring-boot-starter-test：测试模块，包括JUnit、Hamcrest、Mockito。</p>
-<p>如果需要热启动（实时生效修改内容）<br>在dependencies标签下添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line"></span><br><span class="line">        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line"></span><br><span class="line">	 &lt;artifactId&gt;spring-boot-devtools&lt;/artifactId&gt;</span><br><span class="line"></span><br><span class="line">        &lt;optional&gt;true&lt;/optional&gt;</span><br><span class="line"></span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure><br>并且在build标签下的plugin标签内添加：<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> &lt;configurat&gt;	</span><br><span class="line">     &lt;fork&gt;true&lt;/fork&gt;</span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure><br>该模块在完整的打包环境下运行的时候会被禁用。如果你使用java -jar启动应用或者用一个特定的</p>
-<p>classloader启动，它会认为这是一个“生产环境”。</p>
-<p>2.pom.xml报错<br>报错信息：org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project.MavenProject, org.apache.maven.archiver.MavenArchiveConfiguration)</p>
-<p>在POM.xml文件内的properties标签下增加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;maven-jar-plugin.version&gt;2.6&lt;/maven-jar-plugin.version&gt;</span><br></pre></td></tr></table></figure><br>虽然解决了pom.xml的报错，但是因为spring boot版本较高还是出问题了，因此换了最低的版本</p>
-<p>3.启动application.java的时候报错<br>报错信息：org.apache.catalina.LifecycleException: Failed to start component [Connector[HTTP/1.1-8080]]<br>我这里是因为端口占用，因为我开着webstorm占着8080端口</p>
-<p>4.成功启动application后，网页报错<br>报错信息：This application has no explicit mapping for /error, so you are seeing this as a fallback.<br>原因1:<br>Application启动类的位置不对.要将Application类放在最外侧,即包含所有子包<br>原因:spring-boot会自动加载启动类所在包下及其子包下的所有组件.</p>
-<p>原因2:<br>在springboot的配置文件:application.yml或application.properties中关于视图解析器的配置问题:<br>当pom文件下的spring-boot-starter-paren版本高时使用:<br>spring.mvc.view.prefix/spring.mvc.view.suffix<br>当pom文件下的spring-boot-starter-paren版本低时使用:<br>spring.view.prefix/spring.view.suffix</p>
-<p>原因3:<br>控制器的URL路径书写问题<br>@RequestMapping(“xxxxxxxxxxxxxx”)<br>实际访问的路径与”xxx”不符合.</p>
-<p>我就是原因1<br>接下来就正常了，准备学习进阶配置</p>
+        <p>2018.8.13在公交车上看到wegame下架mhw的事情让我一整天都不想工作，天生一个游戏迷，满脑子都是白刷了白刷了。。<br><a id="more"></a><br>steam+微软账户游戏价值应该有5K+了，在steam国服商店（非完美代理）上线之前一直深感游戏的价格昂贵，美服Xbox一个游戏正常情况下要59.9刀。。而steam国区上线以后gta5只要100多。。NM。。于是觉得中国有必要有一个游戏代理发行商，恰巧后来出现了wegame，一开始没什么动作但是确定代理MHW的时候我也是小兴奋了一下，果不其然价格喜人，通过各种优惠到手200元，无和谐，联机稳定，提前发售等都是优点，单论mhw，steam完败给了wg，现在时间是8.13 steam玩家还在研究如何联机= =。。</p>
+<p>事情出来以后各种言论，有说steam玩家举报的，有说XX公司举报的，有说是TX自己没做好提前上线没拿版署，整理了一下，个人看法：<br>1.steam玩家举报，绝对有人这么干，林子大了什么鸟都有，但是产生实质性效果，我觉得不可能，何况这一次有关部门行动速度之快，根本不可能是玩家的力量<br>2.版署，听说是拿到的，各种帖子都有说这个问题，并且TX这么个有脑子的老油条我不信会犯这种低级错误，毕竟真要违规上线，8.7何必拖到8.8<br>3.XX公司举报，我觉得极有可能，为什么？第一，相关部门行动速度如此之快令人咂舌，一般人没有能量做到。第二，有爆料付费发黑文的线索。第三，某厂代理的游戏出了8.0,并且模仿怪物猎人的手游测试了</p>
+<p>有些人带着一身资本腐臭味进入游戏市场也不是一天两天了，TX也是其中一个，但是TX近日正在洗白，想着完美代理steam以后估计steam会炸，觉得TX能做好是最好的，结果发生了这个事情，只能说国内近5年告别3A游戏市场了吧，不管是谁干的steam愤青玩家也好、某厂领导人也好，我觉得都不配玩游戏、做游戏、代理游戏，因为就算是国外臭名昭著的EA都不及他们的百万分之一，干这件事的人毁的不是简单的wegame mhw，tx，而是整个中国游戏市场，不久的将来完美代理steam以后如果没有方式接触到国外的优质游戏，我相信中国游戏市场会回到那个黑暗年代，盗版满天飞，网游死坑钱，难道一个产业被摧毁是某些人想看到的结果吗？恐怖。我相信此次事件是没有赢家的，也许举报人还在笑呵呵的呢，到时候自己的游戏上不了了就开始哭了，这才是真的好笑。</p>
 
       
     </div>
@@ -398,12 +386,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/学习日志/" rel="tag"># 学习日志</a>
-          
-        </div>
-      
 
       
       
@@ -413,8 +395,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/01/个人搭建hexo时出现的问题/" rel="next" title="个人搭建hexo时出现的问题">
-                <i class="fa fa-chevron-left"></i> 个人搭建hexo时出现的问题
+              <a href="/2018/08/07/Spring-boot学习日志2/" rel="next" title="Spring boot学习日志2">
+                <i class="fa fa-chevron-left"></i> Spring boot学习日志2
               </a>
             
           </div>
@@ -422,10 +404,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/03/spring-boot部分注释标签摘要/" rel="prev" title="spring boot部分注释标签摘要">
-                spring boot部分注释标签摘要 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
